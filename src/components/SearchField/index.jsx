@@ -1,9 +1,26 @@
 import React from 'react';
 
-export default function SearchField({ handleChange, search }) {
+import Button from '../Button';
+
+export default function SearchField({ handleChange, search, handleClick }) {
   return (
-    <div>
-      <input type="text" onChange={handleChange} value={search || ''} />
+    <div className="form-row justify-content-center pb-3">
+      <div className="form-group col-md-5 col-auto">
+        {/* <label for="inputSearch" className="d-block text-center">
+          Usuário
+        </label> */}
+        <input
+          id="inputSearch"
+          type="text"
+          className="form-control "
+          onChange={handleChange}
+          value={search || ''}
+          placeholder="Usuário"
+        />
+      </div>
+      <div class="col-auto">
+        <Button handleClick={handleClick} />
+      </div>
     </div>
   );
 }
