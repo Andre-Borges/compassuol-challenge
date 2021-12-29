@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Navigate, useNavigate } from 'react-router-dom';
 import api from '../../services/api';
 
+import './styles.css';
+
 export default function CardUser({ user, home }) {
   const navigate = useNavigate();
   const [repos, setRepos] = useState([]);
@@ -44,7 +46,11 @@ export default function CardUser({ user, home }) {
       {user && (
         <div className="row justify-content-center card-user">
           <div className="col-md-12 text-center">
-            <img src={user.avatar_url} alt={user.name} className="rounded-circle"></img>
+            <img
+              src={user.avatar_url}
+              alt={user.name}
+              className="img-fluid rounded-circle"
+            ></img>
             <h5 className="mt-3">{user.name}</h5>
             {home && (
               <button
@@ -82,13 +88,8 @@ export default function CardUser({ user, home }) {
                 >
                   <div className="card-body">
                     {repos.map((repo) => (
-                      <div className="border-bottom pt-2 pb-2">
-                        <a
-                          key={repo.id}
-                          href={repo.html_url}
-                          target="_blank"
-                          rel="noreferrer"
-                        >
+                      <div key={repo.id} className="border-bottom p-2">
+                        <a href={repo.html_url} target="_blank" rel="noreferrer">
                           {repo.full_name}
                         </a>
                         {repo.description && <span> - {repo.description}</span>}
@@ -122,7 +123,12 @@ export default function CardUser({ user, home }) {
                 >
                   <div className="card-body">
                     {favoritos.map((favorito) => (
-                      <span key={favorito.id}>{favorito.full_name}</span>
+                      <div key={favorito.id} className="border-bottom p-2">
+                        <a href={favorito.html_url} target="_blank" rel="noreferrer">
+                          {favorito.full_name}
+                        </a>
+                        {favorito.description && <span> - {favorito.description}</span>}
+                      </div>
                     ))}
                   </div>
                 </div>

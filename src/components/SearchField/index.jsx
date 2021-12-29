@@ -18,7 +18,7 @@ export default function SearchField({ handleChange, search, handleClick }) {
           placeholder="Usuário"
         />
       </div>
-      <div class="col-auto">
+      <div className="col-auto">
         <Button handleClick={handleClick} />
       </div>
     </div>

@@ -1,0 +1,9 @@
+#repositorios,
+#favoritos {
+  max-height: 550px;
+  overflow: auto;
+}
+
+.card-user .card-body > div:last-child {
+  border: 0 !important;
+}
