@@ -33,12 +33,9 @@ export default function Home() {
   useEffect(() => {}, []);
 
   return (
-    <div className="home-container container">
-      <div>
-        <SearchField handleChange={handleChange} search={search} />
-        <Button handleClick={searchUser} />
-        <CardUser user={user} home={true} />
-      </div>
+    <div className="home-container container pt-4 pb-4">
+      <SearchField handleChange={handleChange} search={search} handleClick={searchUser} />
+      <CardUser user={user} home={true} />
     </div>
   );
 }
