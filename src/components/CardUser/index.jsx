@@ -42,66 +42,89 @@ export default function CardUser({ user, home }) {
   return (
     <>
       {user && (
-        <div className="border border-primary">
-          <h1>{user.login}</h1>
-          {home && <button onClick={verMaisDetalhes}>Ver mais detalhes</button>}
-          <div id="accordion">
-            <div className="card">
-              <div className="card-header" id="headingOne">
-                <h5 className="mb-0">
-                  <button
-                    className="btn btn-link"
-                    data-toggle="collapse"
-                    data-target="#repositorios"
-                    aria-expanded="true"
-                    aria-controls="repositorios"
-                    onClick={getRepos}
-                  >
-                    Repositórios
-                  </button>
-                </h5>
-              </div>
-
-              <div
-                id="repositorios"
-                className="collapse"
-                aria-labelledby="headingOne"
-                data-parent="#accordion"
+        <div className="row justify-content-center card-user">
+          <div className="col-md-12 text-center">
+            <img src={user.avatar_url} alt={user.name} className="rounded-circle"></img>
+            <h5 className="mt-3">{user.name}</h5>
+            {home && (
+              <button
+                type="button"
+                className="btn btn-primary mt-3 mb-5"
+                onClick={verMaisDetalhes}
               >
-                <div className="card-body">
-                  {repos.map((repo) => (
-                    <span key={repo.id}>{repo.full_name}</span>
-                  ))}
+                Ver mais detalhes
+              </button>
+            )}
+          </div>
+          <div className="col-md-12 text-center">
+            <div id="accordion">
+              <div className="card">
+                <div className="card-header" id="headingOne">
+                  <h5 className="mb-0">
+                    <button
+                      className="btn btn-link"
+                      data-toggle="collapse"
+                      data-target="#repositorios"
+                      aria-expanded="true"
+                      aria-controls="repositorios"
+                      onClick={getRepos}
+                    >
+                      Repositórios
+                    </button>
+                  </h5>
+                </div>
+
+                <div
+                  id="repositorios"
+                  className="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordion"
+                >
+                  <div className="card-body">
+                    {repos.map((repo) => (
+                      <div className="border-bottom pt-2 pb-2">
+                        <a
+                          key={repo.id}
+                          href={repo.html_url}
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          {repo.full_name}
+                        </a>
+                        {repo.description && <span> - {repo.description}</span>}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <div className="card">
-              <div className="card-header" id="headingTwo">
-                <h5 className="mb-0">
-                  <button
-                    className="btn btn-link"
-                    data-toggle="collapse"
-                    data-target="#favoritos"
-                    aria-expanded="true"
-                    aria-controls="favoritos"
-                    onClick={getFavoritos}
-                  >
-                    Favoritos
-                  </button>
-                </h5>
-              </div>
+              <div className="card">
+                <div className="card-header" id="headingTwo">
+                  <h5 className="mb-0">
+                    <button
+                      className="btn btn-link"
+                      data-toggle="collapse"
+                      data-target="#favoritos"
+                      aria-expanded="true"
+                      aria-controls="favoritos"
+                      onClick={getFavoritos}
+                    >
+                      Favoritos
+                    </button>
+                  </h5>
+                </div>
 
-              <div
-                id="favoritos"
-                className="collapse"
-                aria-labelledby="headingOne"
-                data-parent="#accordion"
-              >
-                <div className="card-body">
-                  {favoritos.map((favorito) => (
-                    <span key={favorito.id}>{favorito.full_name}</span>
-                  ))}
+                <div
+                  id="favoritos"
+                  className="collapse"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordion"
+                >
+                  <div className="card-body">
+                    {favoritos.map((favorito) => (
+                      <span key={favorito.id}>{favorito.full_name}</span>
+                    ))}
+                  </div>
                 </div>
               </div>
             </div>
