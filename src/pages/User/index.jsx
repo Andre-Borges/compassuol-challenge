@@ -35,7 +35,12 @@ export default function User() {
 
   return (
     <div className="user-container container-fluid">
-      <button onClick={voltarPage}>Voltar</button>
+      <div className="row justify-content-center p-3">
+        <button type="button" className="btn btn-info" onClick={voltarPage}>
+          Voltar
+        </button>
+      </div>
+
       <div className="container">
         <CardUser user={user} />
       </div>

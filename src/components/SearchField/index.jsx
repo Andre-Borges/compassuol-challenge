@@ -6,9 +6,6 @@ export default function SearchField({ handleChange, search, handleClick }) {
   return (
     <div className="form-row justify-content-center pb-3">
       <div className="form-group col-md-5 col-auto">
-        {/* <label for="inputSearch" className="d-block text-center">
-          Usuário
-        </label> */}
         <input
           id="inputSearch"
           type="text"
