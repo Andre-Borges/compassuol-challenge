@@ -9,7 +9,7 @@ function App() {
   return (
     <>
       <ToastContainer autoClose={3000} />
-      <Routes />;
+      <Routes />
     </>
   );
 }
