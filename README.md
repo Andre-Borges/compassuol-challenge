@@ -2,11 +2,7 @@
 
 ## Configuração
 
-<br/>
-
 - Para iniciar o servidor em desenvolvimento.
-
-<br/>
 
 1. Instale todas as dependências:
 
@@ -21,8 +17,6 @@
    ```
 
 3. Abra [http://localhost:3000](http://localhost:3000) em seu navegador.
-
-<br/>
 
 ## Descrição do Projeto
 
