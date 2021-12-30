@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import api from '../../services/api';
 
 import SearchField from '../../components/SearchField';
@@ -24,6 +24,7 @@ export default function Home() {
       })
       .catch((error) => {
         console.log(error.response.data.message);
+        toast.error('Usuário não encontrado.');
       });
   }
 

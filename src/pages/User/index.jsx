@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import api from '../../services/api';
 
 import CardUser from '../../components/CardUser';
@@ -26,6 +26,8 @@ export default function User() {
       })
       .catch((error) => {
         console.log(error.response.data.message);
+        toast.error('Usuário não encontrado.');
+        navigate('/');
       });
   }, [params]);
 
