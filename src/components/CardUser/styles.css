@@ -1,7 +1,12 @@
 #repositorios,
 #favoritos {
   max-height: 550px;
-  overflow: auto;
+  overflow-y: auto;
+}
+
+#repositorios > .card-body,
+#favoritos > .card-body {
+  height: 550px;
 }
 
 .card-user .card-body > div:last-child {
