@@ -27,7 +27,7 @@ export default function User() {
         toast.error('Usuário não encontrado.');
         navigate('/');
       });
-  }, [params]);
+  }, [params, navigate]);
 
   useEffect(() => {
     !userRedux ? getUser() : setUser(userRedux);
