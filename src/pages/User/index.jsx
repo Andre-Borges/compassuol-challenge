@@ -2,7 +2,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import api from '../../services/api';
+import { api, auth } from '../../services/api';
 
 import CardUser from '../../components/CardUser';
 
@@ -17,7 +17,7 @@ export default function User() {
 
   const getUser = useCallback(() => {
     api
-      .get(`/${params.user}`)
+      .get(`/${params.user}${auth.req}`)
       .then((response) => {
         const { data } = response;
         setUser(data);

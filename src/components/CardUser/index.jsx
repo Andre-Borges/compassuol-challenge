@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import api from '../../services/api';
+import { api, auth } from '../../services/api';
 
 import './styles.css';
 
@@ -12,7 +12,7 @@ export default function CardUser({ user, home, voltarPage }) {
   function getRepos() {
     !repos.length &&
       api
-        .get(`/${user.login}/repos`)
+        .get(`/${user.login}/repos${auth.req}`)
         .then((response) => {
           const { data } = response;
           setRepos(data);
@@ -25,7 +25,7 @@ export default function CardUser({ user, home, voltarPage }) {
   function getFavoritos() {
     !favoritos.length &&
       api
-        .get(`/${user.login}/starred`)
+        .get(`/${user.login}/starred${auth.req}`)
         .then((response) => {
           const { data } = response;
           setFavoritos(data);

@@ -1,10 +1,12 @@
 import axios from 'axios';
 
-const api = axios.create({
+export const api = axios.create({
   baseURL: 'https://api.github.com/users',
-  client_id: '293ea240976d031209d2',
-  client_secret: 'cf4f13df096751ac089dcc9aba9d8b3ef8690f2f',
   responseType: 'json',
 });
 
-export default api;
+export const auth = {
+  client_id: '88b042761dcc9cb9bd83',
+  client_secret: 'bee728e008ac16ae6211c174cb0aad35975bf4c3',
+  req: '?client_id=88b042761dcc9cb9bd83&client_secret=bee728e008ac16ae6211c174cb0aad35975bf4c3',
+};

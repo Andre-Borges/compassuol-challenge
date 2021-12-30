@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { toast } from 'react-toastify';
-import api from '../../services/api';
+import { api, auth } from '../../services/api';
 
 import SearchField from '../../components/SearchField';
 import CardUser from '../../components/CardUser';
@@ -16,7 +16,7 @@ export default function Home() {
 
   async function searchUser() {
     api
-      .get(`/${search}`)
+      .get(`/${search}${auth.req}`)
       .then((response) => {
         const { data } = response;
         dispatch(setUserRedux(data));
