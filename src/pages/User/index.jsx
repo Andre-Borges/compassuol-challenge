@@ -8,8 +8,6 @@ import CardUser from '../../components/CardUser';
 
 import { clearUserRedux } from '../../redux/actions';
 
-import './styles.css';
-
 export default function User() {
   const dispatch = useDispatch();
   const params = useParams();

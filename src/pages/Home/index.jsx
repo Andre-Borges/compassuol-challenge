@@ -7,7 +7,6 @@ import api from '../../services/api';
 import SearchField from '../../components/SearchField';
 import CardUser from '../../components/CardUser';
 
-import './styles.css';
 import { setUserRedux } from '../../redux/actions';
 
 export default function Home() {

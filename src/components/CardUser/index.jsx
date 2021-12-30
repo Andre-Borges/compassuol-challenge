@@ -43,7 +43,7 @@ export default function CardUser({ user, home, voltarPage }) {
     <>
       {user && (
         <div className="row justify-content-center card-user">
-          <div className="col-md-12 text-center mb-4">
+          <div className="col-md-12 text-center mt-3 mb-4">
             <img
               src={user.avatar_url}
               alt={user.name}

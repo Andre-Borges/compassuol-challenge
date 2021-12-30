@@ -4,15 +4,15 @@ import Button from '../Button';
 
 export default function SearchField({ handleChange, search, handleClick }) {
   return (
-    <div className="form-row justify-content-center pb-3">
+    <div className="form-row justify-content-center pt-3 pb-3">
       <div className="form-group col-md-5 col-auto">
         <input
           id="inputSearch"
           type="text"
-          className="form-control "
+          className="form-control form-control-lg"
           onChange={handleChange}
           value={search || ''}
-          placeholder="Usuário github"
+          placeholder="Pesquisar usuários"
         />
       </div>
       <div className="col-auto">
