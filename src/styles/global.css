@@ -1,0 +1,20 @@
+#root {
+  height: 100%;
+  min-height: 100vh;
+  background-color: #f0f2f6;
+}
+
+::placeholder {
+  color: #cecece !important;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #cecece !important;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #cecece !important;
+}

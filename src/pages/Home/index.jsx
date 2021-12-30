@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // import { toast } from 'react-toastify';
@@ -31,8 +31,6 @@ export default function Home() {
     const { value } = e.target;
     setSearch(value);
   }
-
-  useEffect(() => {}, []);
 
   return (
     <div className="home-container container pt-4 pb-4">

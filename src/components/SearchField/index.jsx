@@ -12,7 +12,7 @@ export default function SearchField({ handleChange, search, handleClick }) {
           className="form-control "
           onChange={handleChange}
           value={search || ''}
-          placeholder="Usuário"
+          placeholder="Usuário github"
         />
       </div>
       <div className="col-auto">

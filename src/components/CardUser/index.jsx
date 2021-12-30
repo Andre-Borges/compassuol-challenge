@@ -4,7 +4,7 @@ import api from '../../services/api';
 
 import './styles.css';
 
-export default function CardUser({ user, home }) {
+export default function CardUser({ user, home, voltarPage }) {
   const navigate = useNavigate();
   const [repos, setRepos] = useState([]);
   const [favoritos, setFavoritos] = useState([]);
@@ -15,7 +15,6 @@ export default function CardUser({ user, home }) {
         .get(`/${user.login}/repos`)
         .then((response) => {
           const { data } = response;
-          console.log(data);
           setRepos(data);
         })
         .catch((error) => {
@@ -29,7 +28,6 @@ export default function CardUser({ user, home }) {
         .get(`/${user.login}/starred`)
         .then((response) => {
           const { data } = response;
-          console.log(data);
           setFavoritos(data);
         })
         .catch((error) => {
@@ -61,13 +59,21 @@ export default function CardUser({ user, home }) {
                 <p className="mb-0">{user.location}</p>
               </>
             )}
-            {home && (
+            {home ? (
               <button
                 type="button"
                 className="btn btn-primary mt-3 mb-5"
                 onClick={verMaisDetalhes}
               >
                 Ver mais detalhes
+              </button>
+            ) : (
+              <button
+                type="button"
+                className="btn btn-primary mt-3 mb-1"
+                onClick={voltarPage}
+              >
+                Voltar
               </button>
             )}
           </div>
