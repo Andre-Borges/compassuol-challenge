@@ -7,7 +7,7 @@ import { api, auth } from '../../services/api';
 import SearchField from '../../components/SearchField';
 import CardUser from '../../components/CardUser';
 
-import { setUserRedux } from '../../redux/actions';
+import { setUserRedux, clearUserRedux } from '../../redux/actions';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -22,6 +22,7 @@ export default function Home() {
         dispatch(setUserRedux(data));
       })
       .catch((error) => {
+        dispatch(clearUserRedux());
         console.log(error.response.data.message);
         toast.error('Usuário não encontrado.');
       });
